@@ -1,0 +1,130 @@
+ :root{
+      --primary:#1877f2;
+      --bg:#f0f2f5;
+      --card:#fff;
+      --muted:#666;
+      --danger:#e0245e;
+      --radius:10px;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ---------- Layout ---------- */
+    .hidden{display:none !important}
+    .center {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* Auth screen */
+    .auth-screen{
+      min-height:100vh;
+      padding:28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .auth-card{
+      width:100%;
+      max-width:380px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 6px 22px rgba(12,20,30,0.08);
+      padding:20px;
+    }
+    .auth-card h1{margin:0 0 8px;font-size:20px;color:var(--primary)}
+    .field{margin-top:10px}
+    .field input, .field textarea{
+      width:100%;padding:10px;border-radius:8px;border:1px solid #dcdcdc;
+      font-size:14px;
+    }
+    .btn{
+      display:inline-block;padding:10px 12px;border-radius:8px;border:none;
+      background:var(--primary);color:#fff;font-weight:600;cursor:pointer;margin-top:12px;
+    }
+    .muted{color:var(--muted);font-size:13px;margin-top:10px}
+    .link{color:var(--primary);cursor:pointer}
+
+    /* App layout */
+    .app{
+      display:flex;
+      justify-content:center;
+      padding:18px;
+    }
+    .shell{
+      width:100%;
+      max-width:var(--maxw);
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:16px;
+    }
+
+    /* Left column (profile & nav) */
+    .sidebar{
+      position:sticky;top:18px;
+    }
+    .profile-card{
+      background:var(--card);padding:14px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    }
+    .profile-card h3{margin:0 0 6px}
+    .profile-card p{margin:0;color:var(--muted);font-size:13px}
+    .nav{
+      margin-top:12px;
+      display:flex;flex-direction:column;gap:8px;
+    }
+    .nav button{
+      text-align:left;padding:10px;border-radius:8px;border:1px solid #e9eefc;background:#fff;cursor:pointer;
+    }
+
+    /* Right column (main) */
+    .main{
+      min-height:80vh;
+    }
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;
+    }
+    .topbar h2{margin:0;font-size:18px}
+    .card{
+      background:var(--card);border-radius:var(--radius);padding:12px;margin-bottom:14px;box-shadow:0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Create post */
+    .create-post textarea{min-height:70px;resize:vertical}
+    .create-actions{display:flex;justify-content:flex-end;margin-top:8px}
+
+    /* Post item */
+    .post-author{font-weight:700;color:var(--primary);margin-bottom:6px}
+    .post-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .post-text{white-space:pre-wrap;margin-bottom:8px}
+    .post-actions{display:flex;align-items:center;gap:10px}
+    .like-btn{
+      border:1px solid #e2e8f0;padding:6px 10px;border-radius:20px;background:transparent;cursor:pointer;
+    }
+    .like-btn.liked{background:#ffeef0;border-color:#ffcade;color:var(--danger)}
+    .count{font-size:13px;color:var(--muted)}
+
+    /* Heart animation */
+    .heart{
+      position:absolute;font-size:56px;color:#ff1d5c;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);opacity:0;transition:all .45s cubic-bezier(.22,.9,.35,1);pointer-events:none;
+    }
+    .show-heart{transform:translate(-50%,-50%) scale(1);opacity:1}
+
+    /* Comments */
+    .comments{margin-top:10px}
+    .comment{background:#f4f6f8;padding:8px;border-radius:8px;margin-bottom:8px;font-size:13px}
+    .comment strong{color:var(--primary);font-weight:700}
+
+    /* Responsive */
+    @media (max-width:800px){
+      .shell{grid-template-columns:1fr; padding-bottom:80px}
+      .sidebar{position:relative}
+    }

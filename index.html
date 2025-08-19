@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mini Chat App</title>
+  <link rel="stylesheet" type="text/css" href="css/index-css.css">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+
+
+
+
+
+
+  <!-- AUTH -->
+  <section id="auth" class="auth-screen ">
+    <div class="auth-card">
+      
+        <h3 id="auth-title" >Welcome To TRIBE</h3>
+<marquee>Meet and connect with your tribe and foreigners</marquee>
+      <div id="auth-error" style="display:none;background:#ffe6e9;color:#a40020;padding:8px;border-radius:8px;margin-top:8px"></div>
+
+
+
+      <div class="field"><input id="input-username" placeholder="username (no spaces)"/>
+
+</div>
+
+
+      <div class="field">
+
+
+        <input id="input-password" type="password" placeholder="password"/>
+      </div>
+
+
+
+
+      <button id="btn-auth" class="btn">Login</button>
+
+      <div class="muted">
+        <span id="switch-text">Don't have an account?</span>
+        <span id="link-switch" class="link"> Register</span>
+      </div>
+      <div style="height:8px"></div>
+      <div style="margin-top:8px" class="muted">Tip: username will act as account id. You can edit display name & bio later in profile.</div>
+
+
+
+    </div>
+
+
+
+
+
+  </section>
+
+  <!-- APP -->
+  <main id="app" class="app hidden" aria-hidden="true">
+    <div class="shell">
+      <!-- LEFT: profile + nav -->
+      <aside class="sidebar">
+        <div class="profile-card card">
+          <h3 id="profile-display">Display Name</h3>
+          <p id="profile-username">@username</p>
+          <p id="profile-bio" style="margin-top:8px;color:var(--muted)">Bio goes here</p>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <div class="nav">
+            <button id="nav-home">Home (Profile)</button>
+            <button id="nav-feed">News Feed</button>
+            <button id="nav-create">Create Post</button>
+            <button id="nav-logout" style="background:var(--danger);color:#fff;border:none">Logout</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <div style="font-size:13px;color:var(--muted);">Logged in as</div>
+          <div style="font-weight:700;margin-top:6px" id="sidebar-username">@username</div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: main area -->
+      <section class="main">
+        <div class="topbar">
+          <h2 id="main-title">Profile</h2>
+          <div style="font-size:13px;color:var(--muted)">KenTech Chat App</div>
+        </div>
+
+        <!-- PROFILE VIEW -->
+        <div id="view-profile" class="card">
+          <h3>Edit Profile</h3>
+          <div style="margin-top:8px">
+            <label style="font-size:13px;color:var(--muted)">Display name</label>
+            <div style="margin-top:6px"><input id="edit-display" style="padding:8px;border-radius:8px;border:1px solid #ddd;width:100%"/></div>
+          </div>
+          <div style="margin-top:10px">
+            <label style="font-size:13px;color:var(--muted)">Bio</label>
+            <div style="margin-top:6px"><textarea id="edit-bio" rows="3" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd"></textarea></div>
+          </div>
+          <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+            <button id="btn-save-profile" class="btn" style="background:var(--primary)">Save</button>
+          </div>
+        </div>
+
+        <!-- CREATE POST VIEW -->
+        <div id="view-create" class="card hidden">
+          <h3>Create Post</h3>
+          <div style="margin-top:8px">
+            <textarea id="post-text" placeholder="What's on your mind?" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd"></textarea>
+            <div class="create-actions">
+              <button id="btn-post" class="btn">Post</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEED VIEW -->
+        <div id="view-feed" class="hidden">
+          <!-- posts will be injected here -->
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+
+<script src="js/index-js.js"></script>
+<script src="js/loginjs.js"></script>
+  
+</body>
+</html>
